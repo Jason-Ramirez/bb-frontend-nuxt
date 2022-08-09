@@ -1,0 +1,3 @@
+<template>
+  Custom hello
+</template>
