@@ -1,3 +1,14 @@
+<script>
+definePageMeta({
+  layout: 'authenticated',
+  middleware: 'auth',
+});
+</script>
+
 <template>
-  Custom hello
+  <div>
+    INDEX PAGE
+    <p>Name: {{ $auth.user?.name }}</p>
+    <p>Email: {{ $auth.user?.email }}</p>   
+  </div> 
 </template>

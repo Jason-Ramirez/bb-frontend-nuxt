@@ -1,3 +1,19 @@
+<script lang='ts'>
+export default defineNuxtComponent({
+  setup() {
+    async function onLogout() {
+      console.log('logout');
+      try {
+        await this.$auth.logout();
+      } catch (error) {
+        console.log('Logout failed:', error);
+      }
+    }
+    return { onLogout }
+  },
+})
+</script>
+
 <template>
   <div class="navbar relative dark:bg-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -15,12 +31,12 @@
           </nuxt-link>
         </nav>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-          <nuxt-link 
+          <button 
             v-if="true" 
-            to="/auth/login"
+            @click="onLogout"
             class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"> 
             Logout
-          </nuxt-link>
+          </button>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 
 <template>
   <div class="h-screen">
+    <LayoutNavbar/>
     <slot/>
-  </div >
+  </div>
 </template>
